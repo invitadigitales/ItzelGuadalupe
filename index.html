@@ -28,6 +28,17 @@
 </head>
 
 <body>
+
+
+
+    <div class="protector bg_black bg_opacity_70" >
+        <center class="protector-centrado bg_white p_20 rounded box_shadow_dark" id="sello">
+            <h3 class="font_paris m_0">Bienvenidos a la invitación de</h3>
+            <h3 class="font_paris m_0 fspx_30">Itzel Guadalupe</h3>
+        </center>
+    </div>
+
+
     <div class="content">
 
 
@@ -172,12 +183,6 @@
                     </a>
                
            
-                    <div class="m_0a d_block">
-                        <div class="px_50 mt_20 color_black">
-                            <h3 class="font_paris fspx_50 m_0">Regalos</h3>
-                            <h3 class="font_urbanist fspx_15  max_wpx_300 m_0">El regalo es opcional, la asistencia obligatoria. Si deseas tener un detalle conmigo, una lluvia de sobres será bien recibida.</h3>
-                        </div>
-                    </div>
 
 
                 </center>
@@ -320,13 +325,23 @@ $('#sound').click(() => {
 
     muted = !muted;
     if (muted) {
-        audio.play();
-    } else {
         audio.pause();
+    } else {
+        audio.play();
     }
-    $('#sound').find('img').attr('src', muted ? 'sound.svg' : 'sound_mute.svg');
+    $('#sound').find('img').attr('src', muted ? ' sound_mute.svg' : 'sound.svg');
 
 });
+
+
+document.getElementById("sello").addEventListener("click", function() {
+    audio.play();
+    $('#sound').find('img').attr('src','sound.svg');
+    $('body').css('overflow-y', 'auto');
+    document.querySelector(".protector").style.display = "none";
+    $(window).scrollTop(0);
+});
+$(window).scrollTop(0);
 
 
 
